@@ -17,7 +17,7 @@ namespace PetroPrime.DAL.Data
         public DbSet<Payment> payment { get; set; }
         public DbSet<Orders> order { get; set; }
         public DbSet<Courrier> courrier { get; set; }
-        //public DbSet<Category> category { get; set; }
+        public DbSet<Category> category { get; set; }
         public DbSet<Cart> carts { get; set; }
     }
 }
