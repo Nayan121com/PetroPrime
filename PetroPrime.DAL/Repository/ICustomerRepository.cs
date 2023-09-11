@@ -10,6 +10,6 @@ namespace PetroPrime.DAL.Repository
     public interface ICustomerRepository
     {
         void Register(Customer customerInfo);
-        Customer Login(Customer customer);
+        Customer Login(Customer customerDetails);
     }
 }
