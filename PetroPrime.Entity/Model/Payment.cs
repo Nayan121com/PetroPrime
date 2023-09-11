@@ -12,7 +12,9 @@ namespace PetroPrime.Entity.Model
         [Key]
         public int PaymentId { get; set; }
         public int CartId { get; set; }
+        public Cart Cart { get; set; }
         public string Status { get; set; }
         public int Amount { get; set; }
+        public Orders Orders { get; set; }
     }
 }

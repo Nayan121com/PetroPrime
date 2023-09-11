@@ -22,6 +22,6 @@ namespace PetroPrime.Entity.Model
         [Required]
         [DataType(DataType.PhoneNumber)]
         public int CustomerPhone { get; set; }
-
+        public Cart Cart { get; set; } 
     }
 }

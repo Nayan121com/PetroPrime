@@ -22,5 +22,6 @@ namespace PetroPrime.Entity.Model
         public int SupplierPhone { get; set; }
         public string Address { get; set; }
         public string LicenseNumber { get; set; }
+        public ICollection<Product> Product { get; set; }
     }
 }

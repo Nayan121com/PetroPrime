@@ -14,8 +14,11 @@ namespace PetroPrime.Entity.Model
         public string ProductName { get; set; }
         public string ProductDetails { get; set; }
         public int SupplierId { get; set; }
+        public Supplier Supplier { get; set; }
         public int CategoryId { get; set; }
+        public Category Category { get; set; }
         public int Stock { get; set; }
         public int Price { get; set; }
+        public ICollection<Cart> Cart { get; set; }
     }
 }
