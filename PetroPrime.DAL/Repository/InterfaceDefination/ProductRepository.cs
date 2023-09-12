@@ -45,15 +45,15 @@ namespace PetroPrime.DAL.Repository.InterfaceDefination
             return productDetails;
         }
 
-        public int ProductSupplierId(int ProductId)
-        {
-            int supplierId = -1;
-            var result = _petroPrimeDbContext.product.Where(obj => obj.ProductId == ProductId).ToList();
-            if (result.Count() > 0)
-            {
-                supplierId = result[0].SupplierId;
-            }
-            return supplierId;
-        }
+        //public int ProductSupplierId(int ProductId)
+        //{
+        //    int supplierId = -1;
+        //    var result = _petroPrimeDbContext.product.Where(obj => obj.ProductId == ProductId).ToList();
+        //    if (result.Count() > 0)
+        //    {
+        //        supplierId = result[0].SupplierId;
+        //    }
+        //    return supplierId;
+        //}
     }
 }

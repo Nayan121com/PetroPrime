@@ -12,6 +12,6 @@ namespace PetroPrime.DAL.Repository
         void AddProduct(Product productInfo);
         string ProductDetails(int ProductId);
         int ProductCategoryId(int ProductId);
-        int ProductSupplierId(int ProductId);
+        //int ProductSupplierId(int ProductId);
     }
 }

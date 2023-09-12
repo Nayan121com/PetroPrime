@@ -16,8 +16,7 @@ namespace PetroPrime.Entity.Model
         public int TotalAmount { get; set; }
         public DateTime DateAdded { get; set; }
         public int Quantity { get; set; }
-        public int ProductId { get; set; }
-        public Product Product { get; set; }
+        public ICollection<Product> Product { get; set; }
         public Payment Payment { get; set; }
     }
 }

@@ -14,6 +14,9 @@ namespace PetroPrime.Entity.Model
         public int SupplierId { get; set; }
         public string SupplierName { get; set; }
 
+        public int ProductId { get; set; }
+        public Product Product { get; set; }
+
         [DataType(DataType.EmailAddress)]
         public string SupplierEmail { get; set; }
 
@@ -22,6 +25,5 @@ namespace PetroPrime.Entity.Model
         public int SupplierPhone { get; set; }
         public string Address { get; set; }
         public string LicenseNumber { get; set; }
-        public ICollection<Product> Product { get; set; }
     }
 }
