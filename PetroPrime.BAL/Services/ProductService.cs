@@ -13,7 +13,7 @@ namespace PetroPrime.BAL.Services
     {
         private IProductRepository _productRepository;
 
-        public void AddProduct(Product ProductInfo, int catId, )
+        public void AddProduct(Product ProductInfo, int catId)
         {
             ProductInfo.CategoryId = catId;
             _productRepository.AddProduct(ProductInfo);

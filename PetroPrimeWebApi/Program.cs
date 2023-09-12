@@ -1,11 +1,22 @@
 using Microsoft.AspNetCore.Authentication.Negotiate;
 using Microsoft.EntityFrameworkCore;
 using PetroPrime.DAL.Data;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+//Adding sql connection to the project
 var pgSqlConnection = builder.Configuration.GetConnectionString("postgreSqlConnection");
+
+//Adding serilog to the project
+var logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .Enrich.FromLogContext()
+    .CreateLogger();
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
 
 builder.Services.AddControllers();
 builder.Services.AddDbContext<PetroPrimeDbContext>(options => options.UseNpgsql(pgSqlConnection));
