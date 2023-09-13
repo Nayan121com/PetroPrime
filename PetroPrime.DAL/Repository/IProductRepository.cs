@@ -10,8 +10,8 @@ namespace PetroPrime.DAL.Repository
     public interface IProductRepository
     {
         void AddProduct(Product productInfo);
-        string ProductDetails(int ProductId);
-        int ProductCategoryId(int ProductId);
+        //string ProductDetails(int ProductId);
+        //int ProductCategoryId(int ProductId);
         //int ProductSupplierId(int ProductId);
     }
 }

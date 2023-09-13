@@ -14,8 +14,7 @@ namespace PetroPrime.Entity.Model
         public int SupplierId { get; set; }
         public string SupplierName { get; set; }
 
-        public int ProductId { get; set; }
-        public Product Product { get; set; }
+        //Product ID foreign key is removed from here.
 
         [DataType(DataType.EmailAddress)]
         public string SupplierEmail { get; set; }

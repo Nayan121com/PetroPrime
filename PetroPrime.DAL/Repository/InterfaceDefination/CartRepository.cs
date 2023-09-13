@@ -22,26 +22,26 @@ namespace PetroPrime.DAL.Repository.InterfaceDefination
             _petroPrimeDbContext.SaveChanges();
         }
 
-        public int FetchCartAmount(int CartId)
-        {
-            int amount = 0;
-            var result = _petroPrimeDbContext.carts.Where(obj => obj.CartId == CartId).ToList();
-            if (result.Count() > 0)
-            {
-                amount = result[0].TotalAmount;
-            }
-            return amount;
-        }
+        //public int FetchCartAmount(int CartId)
+        //{
+        //    int amount = 0;
+        //    var result = _petroPrimeDbContext.carts.Where(obj => obj.CartId == CartId).ToList();
+        //    if (result.Count() > 0)
+        //    {
+        //        amount = result[0].TotalAmount;
+        //    }
+        //    return amount;
+        //}
 
-        public int FetchCartId(int CustomerId)
-        {
-            int cartId = 0;
-            var result = _petroPrimeDbContext.carts.Where(obj => obj.CustomerId == CustomerId).ToList();
-            if (result.Count() > 0)
-            {
-                cartId = result[0].CartId;
-            }
-            return cartId;
-        }
+        //public int FetchCartId(int CustomerId)
+        //{
+        //    int cartId = 0;
+        //    var result = _petroPrimeDbContext.carts.Where(obj => obj.CustomerId == CustomerId).ToList();
+        //    if (result.Count() > 0)
+        //    {
+        //        cartId = result[0].CartId;
+        //    }
+        //    return cartId;
+        //}
     }
 }

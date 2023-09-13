@@ -11,11 +11,10 @@ namespace PetroPrime.Entity.Model
     {
         [Key]
         public int OrderId { get; set; }
-        public int PaymentId { get; set; }
-        public Payment Payment { get; set; }
+
+        //Removed paymentID from here.
         public string DeliveryStatus { get; set; }
         public int Quantity { get; set; }
         public DateTime OrderDate { get; set; }
-        public ICollection<Courrier> Courrier { get; set; }
     }
 }

@@ -23,27 +23,27 @@ namespace PetroPrime.DAL.Repository.InterfaceDefination
             _petroPrimeDbContext.SaveChanges();
         }
 
-        public int ProductCategoryId(int ProductId)
-        {
-            int categoryId = -1;
-            var result = _petroPrimeDbContext.product.Where(obj => obj.ProductId == ProductId).ToList();
-            if(result.Count() > 0)
-            {
-                categoryId = result[0].CategoryId;
-            }
-            return categoryId;
-        }
+        //public int ProductCategoryId(int ProductId)
+        //{
+        //    int categoryId = -1;
+        //    var result = _petroPrimeDbContext.product.Where(obj => obj.ProductId == ProductId).ToList();
+        //    if(result.Count() > 0)
+        //    {
+        //        categoryId = result[0].CategoryId;
+        //    }
+        //    return categoryId;
+        //}
 
-        public string ProductDetails(int ProductId)
-        {
-            string productDetails = "";
-            var result = _petroPrimeDbContext.product.Where(obj => obj.ProductId == ProductId).ToList();
-            if (result.Count() > 0)
-            {
-                productDetails = result[0].ProductDetails;
-            }
-            return productDetails;
-        }
+        //public string ProductDetails(int ProductId)
+        //{
+        //    string productDetails = "";
+        //    var result = _petroPrimeDbContext.product.Where(obj => obj.ProductId == ProductId).ToList();
+        //    if (result.Count() > 0)
+        //    {
+        //        productDetails = result[0].ProductDetails;
+        //    }
+        //    return productDetails;
+        //}
 
         //public int ProductSupplierId(int ProductId)
         //{

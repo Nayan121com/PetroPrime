@@ -7,16 +7,20 @@ namespace PetroPrime.BAL.Services
     {
         private IProductRepository _productRepository;
 
-        public void AddProduct(Product ProductInfo, int catId)
+        public ProductService(IProductRepository productRepository)
         {
-            ProductInfo.CategoryId = catId;
+                _productRepository = productRepository;
+        }
+
+        public void AddProduct(Product ProductInfo)
+        {
             _productRepository.AddProduct(ProductInfo);
         }
 
-        public string ProductDetails(int ProductId)
-        {
-            return _productRepository.ProductDetails(ProductId);
-        }
+        //public string ProductDetails(int ProductId)
+        //{
+        //    return _productRepository.ProductDetails(ProductId);
+        //}
 
     }
 }

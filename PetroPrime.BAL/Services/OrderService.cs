@@ -17,9 +17,8 @@ namespace PetroPrime.BAL.Services
             _orderRepository = orderRepository;
         }
 
-        public void AddOrderDetails(Orders OrderInfo, int paymentId)
+        public void AddOrderDetails(Orders OrderInfo)
         {
-            OrderInfo.PaymentId = paymentId;
             _orderRepository.AddOrderDetails(OrderInfo);
         }
     }

@@ -11,10 +11,8 @@ namespace PetroPrime.Entity.Model
     {
         [Key]
         public int PaymentId { get; set; }
-        public int CartId { get; set; }
-        public Cart Cart { get; set; }
+        //CartId is removed from here
         public string Status { get; set; }
         public int Amount { get; set; }
-        public Orders Orders { get; set; }
     }
 }

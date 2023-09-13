@@ -18,9 +18,9 @@ namespace PetroPrimeWebApi.Controllers
         }
 
         [HttpPost("AddOrder")]
-        public IActionResult AddOrderDetails([FromBody] Orders OrderInfo, int orderId)
+        public IActionResult AddOrderDetails([FromBody] Orders OrderInfo)
         {
-            _orderService.AddOrderDetails(OrderInfo, orderId);
+            _orderService.AddOrderDetails(OrderInfo);
             return Ok("Order Successfull");
         }
     }

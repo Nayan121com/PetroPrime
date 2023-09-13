@@ -11,12 +11,11 @@ namespace PetroPrime.Entity.Model
     {
         [Key]
         public int CartId { get; set; }
-        public int CustomerId { get; set; }
-        public Customer Customer { get; set; }
+
+        //Removed Customer Id from here.
         public int TotalAmount { get; set; }
-        public DateTime DateAdded { get; set; }
-        public int Quantity { get; set; }
-        public ICollection<Product> Product { get; set; }
-        public Payment Payment { get; set; }
+        
+        //Removed DateAdded from table.
+        //Removed Quantity from table.
     }
 }
