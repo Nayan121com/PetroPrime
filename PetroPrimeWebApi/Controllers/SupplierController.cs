@@ -7,25 +7,25 @@ namespace PetroPrimeWebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CustomerController : ControllerBase
+    public class SupplierController : ControllerBase
     {
-        private CustomerService _customerService;
+        private SupplierService _supplierService;
 
-        public CustomerController(CustomerService customerService)
+        public SupplierController(SupplierService supplierService)
         {
-            _customerService = customerService;
+            _supplierService = supplierService;
         }
 
         [HttpPost("Register")]
-        public IActionResult Register([FromBody] Customer customerInfo)
+        public IActionResult Register([FromBody] Supplier supplierInfo)
         {
-            _customerService.Register(customerInfo);
+            _supplierService.Register(supplierInfo);
             return Ok("Register successfully!!");
         }
         [HttpPost("Login")]
-        public IActionResult Login([FromBody] Customer customerInfo)
+        public IActionResult Login([FromBody] Supplier supplierInfo)
         {
-            Customer customer = _customerService.Login(customerInfo);
+            Supplier customer = _supplierService.Login(supplierInfo);
             if (customer != null)
                 return Ok("Login success!!");
             else

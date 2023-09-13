@@ -1,10 +1,5 @@
 ﻿using PetroPrime.DAL.Repository;
 using PetroPrime.Entity.Model;
-using System;
-using System.Cousing System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PetroPrime.BAL.Services
 {
@@ -12,7 +7,7 @@ namespace PetroPrime.BAL.Services
     {
         private IProductRepository _productRepository;
 
-        public void AddProduct(Product ProductInfo, inatId)
+        public void AddProduct(Product ProductInfo, int catId)
         {
             ProductInfo.CategoryId = catId;
             _productRepository.AddProduct(ProductInfo);
