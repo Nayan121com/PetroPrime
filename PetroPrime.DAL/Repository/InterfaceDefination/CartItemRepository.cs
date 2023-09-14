@@ -29,10 +29,10 @@ namespace PetroPrime.DAL.Repository.InterfaceDefination
             _petroPrimeDbContext.SaveChanges();
         }
 
-        public void UpdateCartItem(int cartItemId, int quantity)
+        public void UpdateCartItem(CartItemInfo para)
         {
-            var ctItem = _petroPrimeDbContext.cartItem.Find(cartItemId);
-            ctItem.Quantity = quantity;
+            var ctItem = _petroPrimeDbContext.cartItem.Find(para.CartItemId);
+            ctItem.Quantity = para.Quantity;
             _petroPrimeDbContext.Entry(ctItem).State = EntityState.Modified;
             _petroPrimeDbContext.SaveChanges();
         }

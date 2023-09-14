@@ -10,6 +10,6 @@ namespace PetroPrime.DAL.Repository
     public interface ISupplierRepository
     {
         void Register(Supplier supplierInfo);
-        Supplier Login(Supplier supplierDetails);
+        Supplier Login(Login supplierDetails);
     }
 }

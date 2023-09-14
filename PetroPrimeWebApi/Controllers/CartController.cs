@@ -17,16 +17,16 @@ namespace PetroPrimeWebApi.Controllers
         }
 
         [HttpPost("AddToCart")]
-        public IActionResult AddToCart([FromBody] Cart cartInfo)
+        public int AddToCart([FromBody] Cart cartInfo)
         {
-            _cartService.AddToCart(cartInfo);
-            return Ok("Cart Created successfully");
+            return _cartService.AddToCart(cartInfo);
+            
         }
 
         [HttpPut("ClearCart")]
-        public IActionResult ClearCart([FromBody] int customerId)
+        public IActionResult ClearCart([FromBody] int cartId)
         {
-            _cartService.clearCart(customerId);
+            _cartService.clearCart(cartId);
             return Ok("Cart Cleared!");
         }
     }

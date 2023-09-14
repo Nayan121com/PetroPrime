@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PetroPrime.BAL.Services;
+using PetroPrime.Entity.Model;
 
 namespace PetroPrimeWebApi.Controllers
 {
@@ -16,13 +17,13 @@ namespace PetroPrimeWebApi.Controllers
         }
 
         [HttpPost("AddProductSupplier")]
-        public IActionResult AddProductSupplier(int supplierId, int productId)
+        public IActionResult AddProductSupplier([FromBody] ProductSupplier para)
         {
-            _productSupplierService.AddProductSupplier(supplierId, productId);
+            _productSupplierService.AddProductSupplier(para);
             return Ok("Product supplier added successfully!");
         }
         [HttpGet("FetchProductSupplier")]
-        public List<int> FetchProductSupplier(int productId)
+        public List<int> FetchProductSupplier([FromBody] int productId)
         {
             return _productSupplierService.FetchProductSupplier(productId);
         }

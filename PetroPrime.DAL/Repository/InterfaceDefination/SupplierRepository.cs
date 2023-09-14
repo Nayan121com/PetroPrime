@@ -15,11 +15,11 @@ namespace PetroPrime.DAL.Repository.InterfaceDefination
         {
             _petroPrimeDbContext = petroPrimeDbContext;
         }
-        public Supplier Login(Supplier supplierDetails)
+        public Supplier Login(Login supplierDetails)
         {
             Supplier supplierInfo = null;
-            var result = _petroPrimeDbContext.supplier.Where(supplierObj => supplierObj.SupplierEmail == supplierDetails.SupplierEmail &&
-                                                        supplierObj.SupplierPassword == supplierDetails.SupplierPassword).ToList();
+            var result = _petroPrimeDbContext.supplier.Where(supplierObj => supplierObj.SupplierEmail == supplierDetails.Email &&
+                                                        supplierObj.SupplierPassword == supplierDetails.Password).ToList();
             if (result.Count() > 0)
             {
                 supplierInfo = result[0];

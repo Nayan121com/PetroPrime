@@ -17,14 +17,14 @@ namespace PetroPrime.BAL.Services
             _cartRepository = cartRepository;
         }
 
-        public void AddToCart(Cart cartInfo)
+        public int AddToCart(Cart cartInfo)
         {
-            _cartRepository.AddToCart(cartInfo);
+            return _cartRepository.AddToCart(cartInfo);
         }
 
-        public void clearCart(int customerId)
+        public void clearCart(int cartId)
         {
-            _cartRepository.ClearCart(customerId);
+            _cartRepository.ClearCart(cartId);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using PetroPrime.DAL.Repository;
 using PetroPrime.DAL.Repository.InterfaceDefination;
+using PetroPrime.Entity.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +17,9 @@ namespace PetroPrime.BAL.Services
             _productSupplierRepository = productSupplierRepository;
         }
 
-        public void AddProductSupplier(int supplierId, int productId)
+        public void AddProductSupplier(ProductSupplier para)
         {
-            _productSupplierRepository.AddProductSupplier(supplierId, productId);
+            _productSupplierRepository.AddProductSupplier(para);
         }
 
         public List<int> FetchProductSupplier(int productId) { 

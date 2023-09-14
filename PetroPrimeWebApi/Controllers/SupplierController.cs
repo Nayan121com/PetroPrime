@@ -23,9 +23,9 @@ namespace PetroPrimeWebApi.Controllers
             return Ok("Register successfully!!");
         }
         [HttpPost("Login")]
-        public IActionResult Login([FromBody] Supplier supplierInfo)
+        public IActionResult Login([FromBody] Login para)
         {
-            Supplier customer = _supplierService.Login(supplierInfo);
+            Supplier customer = _supplierService.Login(para);
             if (customer != null)
                 return Ok("Login success!!");
             else

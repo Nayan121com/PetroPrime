@@ -27,9 +27,9 @@ namespace PetroPrime.BAL.Services
             _cartItemRepository.DeleteCartItem(cartItemId);
         }
 
-        public void UpdateCartItem(int cartItemId, int quantity)
+        public void UpdateCartItem(CartItemInfo para)
         {
-            _cartItemRepository.UpdateCartItem(cartItemId, quantity);
+            _cartItemRepository.UpdateCartItem(para);
         }
     }
 }

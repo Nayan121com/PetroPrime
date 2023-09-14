@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PetroPrime.Entity.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace PetroPrime.DAL.Repository
 {
     public interface IProductSupplierRepository
     {
-        void AddProductSupplier(int supplierId, int productId);
+        void AddProductSupplier(ProductSupplier para);
 
         List<int> FetchProductSupplier(int productId);
     }

@@ -10,26 +10,26 @@ namespace PetroPrimeWebApi.Properties
     public class CartItemController : ControllerBase
     {
         private CartItemService _cartItemService;
-        public CartItemController(CartItemService cartItemService)
+        public CartItemController([FromBody] CartItemService cartItemService)
         {
             _cartItemService = cartItemService;
         }
 
         [HttpPost("AddCartItem")]
-        public IActionResult AddCartItem(CartItem cartItem)
+        public IActionResult AddCartItem([FromBody] CartItem cartItem)
         {
             _cartItemService.AddCartItem(cartItem);
             return Ok("Item Added Successfully");
 
         }
         [HttpPut("UpdateCartItem")]
-        public IActionResult UpdateCartItem(int cartItemId, int quantity)
+        public IActionResult UpdateCartItem([FromBody] CartItemInfo para)
         {
-            _cartItemService.UpdateCartItem(cartItemId, quantity);
+            _cartItemService.UpdateCartItem(para);
             return Ok("Item Updated in cart");
         }
         [HttpDelete("DeleteCartItem")]
-        public IActionResult DeleteCartItem(int cartItemId)
+        public IActionResult DeleteCartItem([FromBody] int cartItemId)
         {
             _cartItemService.DeleteCartItem(cartItemId);
             return Ok("Item Deleted from cart");

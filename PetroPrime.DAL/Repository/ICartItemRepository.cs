@@ -10,7 +10,7 @@ namespace PetroPrime.DAL.Repository
     public interface ICartItemRepository
     {
         public void AddCartItem(CartItem cartItem);
-        public void UpdateCartItem(int CartItemId, int quantity);
+        public void UpdateCartItem(CartItemInfo cartInfo);
         public void DeleteCartItem(int CartItemId);
     }
 }

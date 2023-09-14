@@ -21,9 +21,9 @@ namespace PetroPrime.BAL.Services
             _customerRepository.Register(customerInfo);
         }
 
-        public Customer Login(Customer customer)
+        public Customer Login(Login loginInfo)
         {
-            return _customerRepository.Login(customer);
+            return _customerRepository.Login(loginInfo);
         }
            
     }

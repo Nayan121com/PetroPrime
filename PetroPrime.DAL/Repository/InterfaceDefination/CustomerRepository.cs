@@ -17,11 +17,12 @@ namespace PetroPrime.DAL.Repository.InterfaceDefination
             _petroPrimeDbContext = petroPrimeDbContext;
         }
 
-        public Customer Login(Customer customerDetails)
+        public Customer Login(Login loginInfo)
         {
             Customer customerInfo = null;
-            var result = _petroPrimeDbContext.customer.Where(customerObj => customerObj.CustomerEmail == customerDetails.CustomerEmail && 
-                                                        customerObj.CustomerPassword == customerDetails.CustomerPassword).ToList();
+
+            var result = _petroPrimeDbContext.customer.Where(obj => obj.CustomerEmail == loginInfo.Email && 
+                                                        obj.CustomerPassword == loginInfo.Password).ToList();
             if(result.Count() > 0)
             {
                 customerInfo = result[0];

@@ -16,11 +16,11 @@ namespace PetroPrime.DAL.Repository.InterfaceDefination
             _petroPrimeDbContext = petroPrimeDbContext;
         }
 
-        public void AddProductSupplier(int supplierId, int productId)
+        public void AddProductSupplier(ProductSupplier para)
         {
             ProductSupplier prodSupplierDetails = new ProductSupplier();
-            prodSupplierDetails.ProductId = productId;
-            prodSupplierDetails.SupplierId = supplierId;
+            prodSupplierDetails.ProductId = para.ProductId;
+            prodSupplierDetails.SupplierId = para.SupplierId;
             _petroPrimeDbContext.productSupplier.Add(prodSupplierDetails);    
         }
 

@@ -21,9 +21,9 @@ namespace PetroPrime.BAL.Services
             _supplierRepository.Register(supplierInfo);
         }
 
-        public Supplier Login(Supplier supplier)
+        public Supplier Login(Login supplierDetails)
         {
-             var result = _supplierRepository.Login(supplier);
+             var result = _supplierRepository.Login(supplierDetails);
             return result;
         }
     }
