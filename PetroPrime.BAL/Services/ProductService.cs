@@ -12,15 +12,9 @@ namespace PetroPrime.BAL.Services
                 _productRepository = productRepository;
         }
 
-        public void AddProduct(Product ProductInfo)
+        public int AddProduct(Product ProductInfo)
         {
-            _productRepository.AddProduct(ProductInfo);
+            return _productRepository.AddProduct(ProductInfo);
         }
-
-        //public string ProductDetails(int ProductId)
-        //{
-        //    return _productRepository.ProductDetails(ProductId);
-        //}
-
     }
 }

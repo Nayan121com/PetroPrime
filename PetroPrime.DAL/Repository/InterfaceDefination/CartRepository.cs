@@ -1,4 +1,5 @@
-﻿using PetroPrime.DAL.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using PetroPrime.DAL.Data;
 using PetroPrime.Entity.Model;
 using System;
 using System.Collections.Generic;
@@ -22,26 +23,14 @@ namespace PetroPrime.DAL.Repository.InterfaceDefination
             _petroPrimeDbContext.SaveChanges();
         }
 
-        //public int FetchCartAmount(int CartId)
-        //{
-        //    int amount = 0;
-        //    var result = _petroPrimeDbContext.carts.Where(obj => obj.CartId == CartId).ToList();
-        //    if (result.Count() > 0)
-        //    {
-        //        amount = result[0].TotalAmount;
-        //    }
-        //    return amount;
-        //}
-
-        //public int FetchCartId(int CustomerId)
-        //{
-        //    int cartId = 0;
-        //    var result = _petroPrimeDbContext.carts.Where(obj => obj.CustomerId == CustomerId).ToList();
-        //    if (result.Count() > 0)
-        //    {
-        //        cartId = result[0].CartId;
-        //    }
-        //    return cartId;
-        //}
+        public void ClearCart(int customerId)
+        {
+            // Performing the modify opertion, making entries 0.
+            var cart = _petroPrimeDbContext.carts.Find(customerId);
+            cart.NumberOfItem = 0;
+            cart.TotalAmount = 0;
+            _petroPrimeDbContext.Entry(cart).State = EntityState.Modified;
+            _petroPrimeDbContext.SaveChanges();
+        }
     }
 }

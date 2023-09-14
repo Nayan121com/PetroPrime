@@ -7,14 +7,12 @@ using System.Threading.Tasks;
 
 namespace PetroPrime.Entity.Model
 {
-
+    // Master Table
     public class Supplier
     {
         [Key]
         public int SupplierId { get; set; }
         public string SupplierName { get; set; }
-
-        //Product ID foreign key is removed from here.
 
         [DataType(DataType.EmailAddress)]
         public string SupplierEmail { get; set; }

@@ -27,15 +27,18 @@ builder.Services.AddDbContext<PetroPrimeDbContext>(options => options.UseNpgsql(
 builder.Services.AddScoped<ICustomerRepository,CustomerRepository>();
 builder.Services.AddScoped<ISupplierRepository,SupplierRepository>();
 builder.Services.AddScoped<IProductRepository,ProductRepository>();
-builder.Services.AddScoped<IOrderRepository,OrderRepository>();
+builder.Services.AddScoped<ICartItemRepository, CartItemRepository>();
 builder.Services.AddScoped<IPaymentRepository,PaymentRepository>();
 builder.Services.AddScoped<ICartRepository,CartRepository>();
-builder.Services.AddScoped<ICourrierRepository,CourrierRepository>();
+builder.Services.AddScoped<IProductSupplierRepository, ProductSupplierRepository>();
+
 builder.Services.AddScoped<CustomerService, CustomerService>();
 builder.Services.AddScoped<CartService,CartService>();
 builder.Services.AddScoped<SupplierService, SupplierService>();
 builder.Services.AddScoped<ProductService, ProductService>();
-builder.Services.AddScoped<OrderService, OrderService>();
+builder.Services.AddScoped<CartItemService, CartItemService>();
+builder.Services.AddScoped<ProductSupplierService, ProductSupplierService>();
+
 //builder.Services.AddScoped<PaymentService, PaymentService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -59,6 +62,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(obj =>
+obj.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000")
+);
 
 app.UseAuthentication();
 app.UseAuthorization();

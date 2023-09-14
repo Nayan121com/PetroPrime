@@ -10,7 +10,6 @@ namespace PetroPrime.DAL.Repository
     public interface ICartRepository
     {
         void AddToCart(Cart cartInfo);
-        //int FetchCartId(int CustomerId);
-        //int FetchCartAmount(int CartId);
+        void ClearCart(int customerId);
     }
 }

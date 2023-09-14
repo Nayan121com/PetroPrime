@@ -16,17 +16,9 @@ namespace PetroPrimeWebApi.Controllers
         }
 
         [HttpPost("AddProduct")]
-        public IActionResult AddProduct([FromBody] Product ProductInfo)
+        public int AddProduct([FromBody] Product ProductInfo)
         {
-            _productService.AddProduct(ProductInfo);
-            return Ok("Product Added Successfully");
+            return _productService.AddProduct(ProductInfo);
         }
-
-        //[HttpPost("ProductDetails")]
-        //public IActionResult ProductDetails([FromBody] int productId)
-        //{
-        //    _productService.ProductDetails(productId);
-        //    return Ok("Product Details added successfully");
-        //}
     }
 }

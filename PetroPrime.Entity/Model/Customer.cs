@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace PetroPrime.Entity.Model
 {
+    //Master Table
     public class Customer
     {
         [Key]
@@ -22,7 +23,5 @@ namespace PetroPrime.Entity.Model
         [Required]
         [DataType(DataType.PhoneNumber)]
         public int CustomerPhone { get; set; }
-        
-        //Need to update the foreign key
     }
 }

@@ -15,9 +15,8 @@ namespace PetroPrime.DAL.Data
         public DbSet<Supplier> supplier { get; set; }
         public DbSet<Product> product { get; set; }
         public DbSet<Payment> payment { get; set; }
-        public DbSet<Orders> order { get; set; }
-        public DbSet<Courrier> courrier { get; set; }
-        public DbSet<Category> category { get; set; }
         public DbSet<Cart> carts { get; set; }
+        public DbSet<ProductSupplier> productSupplier { get; set; }
+        public DbSet<CartItem> cartItem { get; set; }
     }
 }
