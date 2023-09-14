@@ -23,7 +23,7 @@ namespace PetroPrimeWebApi.Controllers
             return Ok("Product supplier added successfully!");
         }
         [HttpGet("FetchProductSupplier")]
-        public List<int> FetchProductSupplier([FromBody] int productId)
+        public List<int> FetchProductSupplier([FromQuery] int productId)
         {
             return _productSupplierService.FetchProductSupplier(productId);
         }

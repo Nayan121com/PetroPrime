@@ -23,13 +23,13 @@ namespace PetroPrimeWebApi.Controllers
             return Ok("Register successfully!!");
         }
         [HttpPost("Login")]
-        public IActionResult Login([FromBody] Login para)
+        public Customer Login([FromBody] Login para)
         {
             Customer customer = _customerService.Login(para);
-            if (customer != null)
-                return Ok("Login success!!");
-            else
-                return NotFound();
+            
+                return customer;
+            
+           
         }
     }
 }
