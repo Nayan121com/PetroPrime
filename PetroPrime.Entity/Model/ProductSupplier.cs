@@ -8,12 +8,11 @@ using System.Threading.Tasks;
 
 namespace PetroPrime.Entity.Model
 {
-
-    public class Payment
+    public class ProductSupplier
     {
         [Key]
-        public int PaymentId { get; set; }
-        public string Status { get; set; }
-        public int CartId { get; set; }
+        public int ProdSuppId { get; set; }
+        public int SupplierId { get; set;}
+        public int ProductId { get; set; }
     }
 }

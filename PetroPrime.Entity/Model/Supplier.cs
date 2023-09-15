@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PetroPrime.Entity.Model
 {
-
+    // Master Table
     public class Supplier
     {
         [Key]

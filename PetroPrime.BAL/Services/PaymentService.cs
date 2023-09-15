@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PetroPrime.Entity.Model
+namespace PetroPrime.BAL.Services
 {
-    internal class Category
+    internal class PaymentService
     {
     }
 }
