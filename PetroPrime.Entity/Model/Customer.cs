@@ -22,6 +22,6 @@ namespace PetroPrime.Entity.Model
         public string CustomerPassword { get; set; }
         [Required]
         [DataType(DataType.PhoneNumber)]
-        public int CustomerPhone { get; set; }
+        public string CustomerPhone { get; set; }
     }
 }

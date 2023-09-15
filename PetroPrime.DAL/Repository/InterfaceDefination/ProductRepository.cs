@@ -23,5 +23,21 @@ namespace PetroPrime.DAL.Repository.InterfaceDefination
             _petroPrimeDbContext.SaveChanges();
             return productInfo.ProductId;
         }
+        public Product FetchProduct(int productId)
+        {
+            Product productDetails = new Product();
+            productDetails = _petroPrimeDbContext.product.Find(productId);
+
+            return productDetails;
+        }
+        public void DeleteProduct(int productId)
+        {
+            Product prodt = new Product();
+            prodt = _petroPrimeDbContext.product.Find(productId);
+            
+                _petroPrimeDbContext.product.Remove(prodt);
+                _petroPrimeDbContext.SaveChanges();
+            
+        }
     }
 }

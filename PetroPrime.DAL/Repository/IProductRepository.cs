@@ -11,6 +11,8 @@ namespace PetroPrime.DAL.Repository
     {
         int AddProduct(Product productInfo);
 
+        Product FetchProduct(int productId);
 
+        void DeleteProduct(int productId);
     }
 }

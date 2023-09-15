@@ -20,5 +20,18 @@ namespace PetroPrimeWebApi.Controllers
         {
             return _productService.AddProduct(ProductInfo);
         }
+
+        [HttpGet("FetchProduct")]
+        public Product FetchProduct([FromQuery] int ProductId)
+        {
+            return _productService.FetchProduct(ProductId);
+        }
+
+        [HttpDelete("DeleteProduct")]
+        public IActionResult DeleteProduct([FromBody]  int ProductId)
+        {
+             _productService.DeleteProduct(ProductId);
+            return Ok("Product Deleted successfully!!");
+        }
     }
 }

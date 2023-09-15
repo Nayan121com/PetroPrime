@@ -16,5 +16,15 @@ namespace PetroPrime.BAL.Services
         {
             return _productRepository.AddProduct(ProductInfo);
         }
+
+        public Product FetchProduct(int ProductId)
+        {
+            return _productRepository.FetchProduct(ProductId);
+        }
+
+        public void DeleteProduct(int ProductId)
+        {
+            _productRepository.DeleteProduct(ProductId);
+        }
     }
 }
